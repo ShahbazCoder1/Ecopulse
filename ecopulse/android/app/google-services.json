@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "26602014755",
+    "firebase_url": "https://robono-95a2d-default-rtdb.firebaseio.com",
+    "project_id": "robono-95a2d",
+    "storage_bucket": "robono-95a2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26602014755:android:51039ba35a5348d7d28996",
+        "android_client_info": {
+          "package_name": "com.hackathon.ecopulseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26602014755-j56pknn2l4lebfdam6vdssvfcla32qp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCgdjHzQVS1duvsVwE-ugwJniZfFFvujw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26602014755-j56pknn2l4lebfdam6vdssvfcla32qp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
