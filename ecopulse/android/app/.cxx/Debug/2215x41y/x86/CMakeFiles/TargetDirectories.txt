@@ -1,2 +1,0 @@
-C:/Users/shahb/Desktop/Ecopulse/ecopulse/android/app/.cxx/Debug/2215x41y/x86/CMakeFiles/edit_cache.dir
-C:/Users/shahb/Desktop/Ecopulse/ecopulse/android/app/.cxx/Debug/2215x41y/x86/CMakeFiles/rebuild_cache.dir
