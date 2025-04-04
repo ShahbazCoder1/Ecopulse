@@ -8,6 +8,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
 import 'details_model.dart';
 export 'details_model.dart';
 
@@ -25,15 +26,12 @@ class _DetailsWidgetState extends State<DetailsWidget> {
   late DetailsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => DetailsModel());
 
-    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
-        .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -43,8 +41,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??=
-        TextEditingController(text: currentUserLocationValue?.toString());
+    _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
   }
 
@@ -57,23 +54,6 @@ class _DetailsWidgetState extends State<DetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (currentUserLocationValue == null) {
-      return Container(
-        color: FlutterFlowTheme.of(context).primaryBackground,
-        child: Center(
-          child: SizedBox(
-            width: 50.0,
-            height: 50.0,
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                FlutterFlowTheme.of(context).primary,
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -86,12 +66,12 @@ class _DetailsWidgetState extends State<DetailsWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
-            borderRadius: 20.0,
-            buttonSize: 40.0,
+            borderRadius: 20,
+            buttonSize: 40,
             icon: Icon(
               Icons.arrow_back_rounded,
               color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
+              size: 24,
             ),
             onPressed: () {
               print('IconButton pressed ...');
@@ -101,26 +81,42 @@ class _DetailsWidgetState extends State<DetailsWidget> {
             'Complete Your Profile',
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'Inter Tight',
-                  fontSize: 18.0,
+                  fontSize: 18,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                 ),
           ),
-          actions: [],
+          actions: [
+            Align(
+              alignment: AlignmentDirectional(-1, 0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    'assets/images/icons8-speaker-50.png',
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
-          elevation: 0.0,
+          elevation: 0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    width: MediaQuery.sizeOf(context).width,
                     child: Form(
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
@@ -129,17 +125,17 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
+                                    alignment: AlignmentDirectional(0, 1),
                                     child: Container(
-                                      width: 100.0,
-                                      height: 100.0,
+                                      width: 100,
+                                      height: 100,
                                       child: Stack(
                                         children: [
                                           InkWell(
@@ -233,8 +229,8 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                               }
                                             },
                                             child: Container(
-                                              width: 120.0,
-                                              height: 120.0,
+                                              width: 120,
+                                              height: 120,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -244,28 +240,28 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  width: 2.0,
+                                                  width: 2,
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: Icon(
                                                   Icons.person_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
-                                                  size: 40.0,
+                                                  size: 40,
                                                 ),
                                               ),
                                             ),
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1, 1),
                                             child: Container(
-                                              width: 40.0,
-                                              height: 40.0,
+                                              width: 40,
+                                              height: 40,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -275,18 +271,18 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  width: 2.0,
+                                                  width: 2,
                                                 ),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: Icon(
                                                   Icons.camera_alt_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                               ),
                                             ),
@@ -307,7 +303,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
-                                ].divide(SizedBox(height: 16.0)),
+                                ].divide(SizedBox(height: 16)),
                               ),
                             ),
                             Column(
@@ -345,30 +341,30 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
@@ -386,7 +382,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   validator: _model.textController1Validator
                                       .asValidator(context),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(SizedBox(height: 8)),
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -422,30 +418,30 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
@@ -463,7 +459,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   validator: _model.textController2Validator
                                       .asValidator(context),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(SizedBox(height: 8)),
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -499,30 +495,30 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
@@ -540,7 +536,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   validator: _model.textController3Validator
                                       .asValidator(context),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(SizedBox(height: 8)),
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -584,30 +580,30 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
@@ -626,19 +622,22 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   validator: _model.textController4Validator
                                       .asValidator(context),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(SizedBox(height: 8)),
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                FFAppState().pro = _model.uploadedFileUrl;
+                                FFAppState().address =
+                                    _model.textController4.text;
+                                safeSetState(() {});
                               },
                               text: 'Save Profile',
                               options: FFButtonOptions(
                                 width: double.infinity,
-                                height: 50.0,
-                                padding: EdgeInsets.all(8.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                height: 50,
+                                padding: EdgeInsets.all(8),
+                                iconPadding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
@@ -648,15 +647,15 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                           .secondaryBackground,
                                       letterSpacing: 0.0,
                                     ),
-                                elevation: 2.0,
+                                elevation: 2,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1.0,
+                                  width: 1,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(8),
                               ),
                             ),
-                          ].divide(SizedBox(height: 24.0)),
+                          ].divide(SizedBox(height: 24)),
                         ),
                       ),
                     ),
