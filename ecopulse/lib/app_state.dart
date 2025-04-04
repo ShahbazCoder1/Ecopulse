@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '/backend/backend.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -122,6 +121,18 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInYExpence(int index, double value) {
     yExpence.insert(index, value);
+  }
+
+  String _pro = '';
+  String get pro => _pro;
+  set pro(String value) {
+    _pro = value;
+  }
+
+  String _address = '';
+  String get address => _address;
+  set address(String value) {
+    _address = value;
   }
 }
 

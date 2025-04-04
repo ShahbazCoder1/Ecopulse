@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -63,7 +64,34 @@ class _ReportGarbageWidgetState extends State<ReportGarbageWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Align(
+              alignment: AlignmentDirectional(-1.0, 0.0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.textToSpeech(
+                      'welcome to the report tab. you can report any instance of improper garbage disposal here. upload photo of the place of occurrence  confirm or drop your present location select the waste type add notes if you have any  verify your details and then click on the submit report button',
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Untitled1_20250404151743.png',
+                      width: 24.0,
+                      height: 24.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
           centerTitle: false,
           elevation: 0.0,
         ),

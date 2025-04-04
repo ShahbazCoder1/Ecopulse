@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -75,6 +76,32 @@ class _ChatWidgetState extends State<ChatWidget> {
               onPressed: () {
                 print('IconButton pressed ...');
               },
+            ),
+            Align(
+              alignment: AlignmentDirectional(-1.0, 0.0),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.textToSpeech(
+                      'welcome to our ECOBOT',
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Untitled1_20250404151743.png',
+                      width: 24.0,
+                      height: 24.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
           centerTitle: true,
@@ -156,21 +183,6 @@ class _ChatWidgetState extends State<ChatWidget> {
                                               ),
                                             ),
                                           ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.asset(
-                                            'assets/images/icons8-speaker-50.png',
-                                            width: 20.0,
-                                            height: 20.0,
-                                            fit: BoxFit.cover,
-                                            alignment: Alignment(-1.0, 0.0),
-                                          ),
                                         ),
                                       ),
                                     ],
@@ -266,90 +278,6 @@ class _ChatWidgetState extends State<ChatWidget> {
                                   ),
                                 ],
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
-                                    child: Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.8,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 3.0,
-                                            color: Color(0x10000000),
-                                            offset: Offset(
-                                              0.0,
-                                              1.0,
-                                            ),
-                                          )
-                                        ],
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.all(12.0),
-                                        child: Text(
-                                          'I want to change my password and update my email address',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.8,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 3.0,
-                                        color: Color(0x10000000),
-                                        offset: Offset(
-                                          0.0,
-                                          1.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'Sure! To change your password, go to Settings > Security > Change Password. For updating your email, navigate to Settings > Personal Information > Email. Would you like me to walk you through each step in detail?',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
                             ),
                           ],
                         ),

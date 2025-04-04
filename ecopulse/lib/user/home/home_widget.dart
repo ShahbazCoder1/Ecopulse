@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -99,7 +100,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: Text(
-                              'Ashraf Nagar Siliguri',
+                              FFAppState().address,
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -119,6 +120,32 @@ class _HomeWidgetState extends State<HomeWidget> {
               ],
             ),
             actions: [
+              Align(
+                alignment: AlignmentDirectional(-1.0, 0.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      await actions.textToSpeech(
+                        'welcome to the home page. view your upcoming pickup schedule   view you Ecopoints  for quick actions, you can click on report issue, history or payments as per your requirements  view your subscription plan below',
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/Untitled1_20250404151743.png',
+                        width: 24.0,
+                        height: 24.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                 child: Icon(
@@ -217,46 +244,42 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             20.0, 10.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 30.0, 0.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      'Next Pickup',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                    Text(
-                                                      'Tomorrow, 9:00 AM',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .titleLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Inter Tight',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ],
-                                                ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Next Pickup',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Tomorrow, 9:00 AM',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                             Column(
@@ -435,194 +458,201 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 5.0, 20.0, 20.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFEFCE8),
-                                  borderRadius: BorderRadius.circular(20.0),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -1.0, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 40.0, 0.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      'Pickup in Progress',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter Tight',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Container(
-                                                  width: 100.0,
-                                                  height: 30.0,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFFEF9CE),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            180.0),
-                                                  ),
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, 0.0),
-                                                  child: Row(
+                            if (responsiveVisibility(
+                              context: context,
+                              phone: false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 5.0, 20.0, 20.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFEFCE8),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 10.0, 20.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 40.0, 0.0),
+                                                  child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
-                                                      Flexible(
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              'Live',
-                                                              maxLines: 1,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter Tight',
-                                                                    color: Color(
-                                                                        0xFFCA8A04),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
+                                                      Text(
+                                                        'Pickup in Progress',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter Tight',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ],
                                                   ),
                                                 ),
-                                              ],
-                                            ),
-                                          ],
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: 100.0,
+                                                    height: 30.0,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xFFFEF9CE),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              180.0),
+                                                    ),
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Flexible(
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'Live',
+                                                                maxLines: 1,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter Tight',
+                                                                      color: Color(
+                                                                          0xFFCA8A04),
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 15.0, 20.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              'Collector: Rajesh K. on the way',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 15.0, 20.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Collector: Rajesh K. on the way',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
-                                        child: LinearPercentIndicator(
-                                          percent: 0.5,
-                                          width: 310.0,
-                                          lineHeight: 25.0,
-                                          animation: true,
-                                          animateFromLastPercent: true,
-                                          progressColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .accent4,
-                                          barRadius: Radius.circular(30.0),
-                                          padding: EdgeInsets.zero,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 10.0, 20.0, 0.0),
+                                          child: LinearPercentIndicator(
+                                            percent: 0.5,
+                                            width: 310.0,
+                                            lineHeight: 25.0,
+                                            animation: true,
+                                            animateFromLastPercent: true,
+                                            progressColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                            barRadius: Radius.circular(30.0),
+                                            padding: EdgeInsets.zero,
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              'Estimated Arrival: 10 min',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 10.0, 20.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Estimated Arrival: 10 min',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                       ),
@@ -967,8 +997,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  'https://picsum.photos/seed/892/600',
+                                                child: Image.asset(
+                                                  'assets/images/Untitled3_20250404152548.png',
                                                   width: 40.0,
                                                   height: 40.0,
                                                   fit: BoxFit.cover,
@@ -1001,8 +1031,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  'https://picsum.photos/seed/892/600',
+                                                child: Image.asset(
+                                                  'assets/images/Untitled4_20250404152755.png',
                                                   width: 40.0,
                                                   height: 40.0,
                                                   fit: BoxFit.cover,
@@ -1035,8 +1065,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  'https://picsum.photos/seed/892/600',
+                                                child: Image.asset(
+                                                  'assets/images/Untitled2_20250404152305.png',
                                                   width: 40.0,
                                                   height: 40.0,
                                                   fit: BoxFit.cover,
@@ -1167,7 +1197,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Basic Plan',
+                                                  'Bronze Plan',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -1297,7 +1327,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Basic Plan',
+                                                  'Silver Plan',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -1311,7 +1341,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    '2 Pickups',
+                                                    '4 Pickups',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall
@@ -1427,7 +1457,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Basic Plan',
+                                                  'Gold Plan',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -1441,7 +1471,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    '2 Pickups',
+                                                    '7 Pickups',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall

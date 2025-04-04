@@ -105,30 +105,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
-  cloud_firestore:
-    dependency: "direct main"
-    description:
-      name: cloud_firestore
-      sha256: d5b73c5f27d95504e45d96e793fe9f9daa62e42b22da85b9f8de4916f46e916d
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.5.0"
-  cloud_firestore_platform_interface:
-    dependency: "direct main"
-    description:
-      name: cloud_firestore_platform_interface
-      sha256: "8d5a3a501f3b21638199819ab76709d3b87abc9a565ed611b13a238611cfba27"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.5.0"
-  cloud_firestore_web:
-    dependency: "direct main"
-    description:
-      name: cloud_firestore_web
-      sha256: "24f302e4ffd88ec2891e33f432b53f59ebd072664c5dc804b7fcbc51ea22b4b3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.3.4"
   collection:
     dependency: "direct main"
     description:
@@ -453,54 +429,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  geolocator:
-    dependency: "direct main"
-    description:
-      name: geolocator
-      sha256: "0ec58b731776bc43097fcf751f79681b6a8f6d3bc737c94779fe9f1ad73c1a81"
-      url: "https://pub.dev"
-    source: hosted
-    version: "13.0.1"
-  geolocator_android:
-    dependency: "direct main"
-    description:
-      name: geolocator_android
-      sha256: "7aefc530db47d90d0580b552df3242440a10fe60814496a979aa67aa98b1fd47"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.6.1"
-  geolocator_apple:
-    dependency: "direct main"
-    description:
-      name: geolocator_apple
-      sha256: bc2aca02423ad429cb0556121f56e60360a2b7d694c8570301d06ea0c00732fd
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.7"
-  geolocator_platform_interface:
-    dependency: "direct main"
-    description:
-      name: geolocator_platform_interface
-      sha256: "386ce3d9cce47838355000070b1d0b13efb5bc430f8ecda7e9238c8409ace012"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.4"
-  geolocator_web:
-    dependency: "direct main"
-    description:
-      name: geolocator_web
-      sha256: "2ed69328e05cd94e7eb48bb0535f5fc0c0c44d1c4fa1e9737267484d05c29b5e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.1"
-  geolocator_windows:
-    dependency: "direct main"
-    description:
-      name: geolocator_windows
-      sha256: "53da08937d07c24b0d9952eb57a3b474e29aae2abf9dd717f7e1230995f13f0e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.3"
   go_router:
     dependency: "direct main"
     description:
@@ -517,6 +445,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
+  google_generative_ai:
+    dependency: "direct main"
+    description:
+      name: google_generative_ai
+      sha256: "81dae159c89e4d9bdc46955b6f4ee5ae0a291f9e8f990d76f43944e0d6041d4f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.6"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -1050,14 +986,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  stream_transform:
-    dependency: "direct main"
-    description:
-      name: stream_transform
-      sha256: "14a00e794c7c11aa145a170587321aedce29769c08d7f58b1d141da75e3b1c6f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
