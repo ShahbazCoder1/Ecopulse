@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -118,23 +119,35 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
-          name: ReportWidget.routeName,
-          path: ReportWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Report')
-              : ReportWidget(),
-        ),
-        FFRoute(
-          name: EcobotWidget.routeName,
-          path: EcobotWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Ecobot')
-              : EcobotWidget(),
-        ),
-        FFRoute(
           name: DetailsWidget.routeName,
           path: DetailsWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => DetailsWidget(),
+        ),
+        FFRoute(
+          name: ReportGarbageWidget.routeName,
+          path: ReportGarbageWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ReportGarbage')
+              : NavBarPage(
+                  initialPage: 'ReportGarbage',
+                  page: ReportGarbageWidget(),
+                ),
+        ),
+        FFRoute(
+          name: ChatWidget.routeName,
+          path: ChatWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'chat')
+              : NavBarPage(
+                  initialPage: 'chat',
+                  page: ChatWidget(),
+                ),
+        ),
+        FFRoute(
+          name: HistoryWidget.routeName,
+          path: HistoryWidget.routePath,
+          builder: (context, params) => HistoryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -253,6 +266,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    List<String>? collectionNamePath,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -270,6 +284,7 @@ class FFParameters {
       param,
       type,
       isList,
+      collectionNamePath: collectionNamePath,
     );
   }
 }

@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '../../flutter_sh/flutter_theme.dart';
-import '../../flutter_sh/flutter_sh_util.dart';
-import '../../flutter_sh/flutter_widgets.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'signup_widget.dart' show SignupWidget;

@@ -1,11 +1,10 @@
-import '../../flutter_sh/flutter_theme.dart';
-import '../../flutter_sh/flutter_sh_util.dart';
-import '../../flutter_sh/flutter_widgets.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'onboard_model.dart';
@@ -54,9 +53,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
           automaticallyImplyLeading: false,
           actions: [
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 15.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -67,10 +66,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                       'Select User Type. Select between Garbage Collector & User.',
                     );
                   },
-                  child: FaIcon(
-                    FontAwesomeIcons.readme,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 24.0,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/icons8-speaker-50.png',
+                      width: 24.0,
+                      height: 24.0,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

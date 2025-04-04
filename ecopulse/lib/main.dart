@@ -9,10 +9,10 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
-import 'flutter_sh/flutter_theme.dart';
-import 'flutter_sh/flutter_sh_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'flutter_sh/nav/nav.dart';
+import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -61,6 +61,8 @@ class _MyAppState extends State<MyApp> {
 
   late Stream<BaseAuthUser> userStream;
 
+  final authUserSub = authenticatedUserStream.listen((_) {});
+
   @override
   void initState() {
     super.initState();
@@ -76,6 +78,13 @@ class _MyAppState extends State<MyApp> {
       Duration(milliseconds: 3000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+
+    super.dispose();
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
@@ -129,8 +138,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'Report': ReportWidget(),
-      'Ecobot': EcobotWidget(),
+      'ReportGarbage': ReportGarbageWidget(),
+      'chat': ChatWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -159,18 +168,18 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.repeat_rounded,
+              Icons.repeat,
               size: 24.0,
             ),
-            label: 'Home',
+            label: 'Report',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.chat_bubble_outlined,
+              Icons.chat_bubble,
               size: 24.0,
             ),
-            label: 'Home',
+            label: 'Ecobot',
             tooltip: '',
           )
         ],
