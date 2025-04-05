@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![EcoPulse Logo](https://github.com/ShahbazCoder1/Ecopulse/blob/main/ecopulse/assets/images/app_launcher_icon.jpg)
+<img src="https://github.com/ShahbazCoder1/Ecopulse/blob/main/ecopulse/assets/images/app_launcher_icon.jpg" alt="EcoPulse Logo" width="100px" height="100px" />
   
 *Sustainable waste management at your fingertips*
 
