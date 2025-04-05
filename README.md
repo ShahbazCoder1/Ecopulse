@@ -52,7 +52,7 @@ Since EcoPulse is developed using Flutter for the mobile interface, follow the s
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ecopulse.git
+git clone https://github.com/ShahbazCoder1/Ecopulse.git
 
 # Navigate to the project directory
 cd ecopulse
