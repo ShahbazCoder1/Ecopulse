@@ -2,9 +2,9 @@
 
 <div align="center">
   
-![EcoPulse Logo](assets/logo.png)
+![EcoPulse Logo](https://github.com/ShahbazCoder1/Ecopulse/blob/main/ecopulse/assets/images/app_launcher_icon.jpg)
   
-*Sustainable living at your fingertips*
+*Sustainable waste management at your fingertips*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -14,15 +14,25 @@
 
 ## 🌱 About EcoPulse
 
-EcoPulse is an innovative platform aimed at promoting sustainable living and environmental consciousness. Originally developed during the "SIT HACK-A-VERSE" hackathon by Team NexHack, this project is now being maintained as an open-source initiative to create meaningful environmental impact.
+EcoPulse is a dynamic, smartphone-based application designed for monthly subscription-based, on-demand garbage collection services. Developed during the SIT Hack-A-Verse 2025 hackathon by **Team NexHack**, EcoPulse addresses urban waste challenges by promoting a cleaner, more structured waste management system. The app not only streamlines scheduling and tracking of waste pickups but also empowers users to report improper waste dumping and receive prompt service.
 
 ## 🚀 Features
 
-- **Environmental Impact Tracking**: Monitor your carbon footprint and resource consumption
-- **Sustainability Challenges**: Join community challenges to adopt eco-friendly habits
-- **Educational Resources**: Learn about sustainability through curated content
-- **Community Engagement**: Connect with like-minded individuals committed to environmental causes
-- **Personalized Recommendations**: Receive tailored suggestions to improve your environmental impact
+- **On-Demand Garbage Collection**: Schedule and track waste pickups with flexible, slot-wise scheduling and auto-renewable monthly subscription plans.
+- **Real-Time Reporting**: Easily report instances of improper waste dumping by capturing photos, automatically attaching GPS data, and selecting the waste type.
+- **AI-Powered Assistance (ECOBOT)**: Enjoy multi-language support with both text and voice chat capabilities. The integrated chatbot provides read-aloud support for users with reading difficulties.
+- **Secure Payment Integration**: Benefit from a secure payment gateway with multiple payment options via Razorpay.
+- **Community Engagement & Rewards**: Participate in challenges, earn rewards, and contribute to building a sustainable community.
+- **Environmental Impact Monitoring**: View collection trends, monitor environmental impact, and support a cleaner urban ecosystem.
+
+## 🛠️ Technology Stack
+
+- **Backend**: Python with Flask API
+- **Mobile Framework**: Flutter
+- **Payment Gateway**: Razorpay
+- **Mapping**: MapMyIndia for real-time location tracking
+- **AI Chatbot**: ChatGPT API for smart assistance
+- **Database**: Supabase
 
 ## 📋 Table of Contents
 
@@ -38,6 +48,8 @@ EcoPulse is an innovative platform aimed at promoting sustainable living and env
 
 ## 🔧 Installation
 
+Since EcoPulse is developed using Flutter for the mobile interface, follow the steps below to set up the project locally:
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/ecopulse.git
@@ -45,50 +57,44 @@ git clone https://github.com/yourusername/ecopulse.git
 # Navigate to the project directory
 cd ecopulse
 
-# Install dependencies
-npm install
+# Install Flutter dependencies
+flutter pub get
 
-# Start the application
-npm start
+# Run the application (ensure you have a connected device or emulator)
+flutter run
 ```
 
 ## 💻 Usage
 
-After installation, you can access the application through your web browser at `http://localhost:3000`.
-
-## 🛠️ Technology Stack
-
-- **Frontend**: React.js, Redux, Material UI
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
-- **Authentication**: Firebase Auth
-- **APIs**: Climate Data API, Carbon Footprint Calculator API
+After installation, the EcoPulse app can be launched on your smartphone or emulator. Once running, you can:
+- Schedule and manage garbage collection pickups.
+- Report improper waste dumping with photo and location tagging.
+- Interact with ECOBOT for assistance and information.
+- Monitor your environmental impact through the app dashboard.
 
 ## 🗺️ Roadmap
 
-- [ ] Mobile app development (iOS and Android)
-- [ ] Integration with smart home devices for real-time energy monitoring
-- [ ] Advanced analytics dashboard for detailed environmental impact insights
-- [ ] Gamification features to encourage sustainable actions
-- [ ] Partnership with environmental organizations for verified impact
+- [ ] Expansion of service coverage to additional urban areas
+- [ ] Development of a dedicated analytics dashboard for deeper environmental insights
+- [ ] Integration with smart home devices for real-time energy and waste monitoring
+- [ ] Further enhancement of the AI chatbot with more commands and multilingual support
+- [ ] Strategic partnerships with environmental organizations and government initiatives (e.g., Swachh Bharat Abhiyan)
 
 ## 👥 Contributing
 
-We're excited that you're interested in contributing to EcoPulse! This project is a community effort, and we welcome contributions of all forms.
+We welcome contributions from the community! If you’d like to help improve EcoPulse:
 
-Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes (`git commit -m 'Add some amazing feature'`).
+4. Push to your branch (`git push origin feature/amazing-feature`).
+5. Open a Pull Request.
 
-### Getting Started with Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+For detailed guidelines, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 📜 Code of Conduct
 
-We are committed to providing a welcoming and inclusive experience for everyone. Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating in our community.
+We are committed to fostering an open and welcoming community. Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a respectful environment for all contributors.
 
 ## 📄 License
 
@@ -96,9 +102,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgements
 
-- SIT HACK-A-VERSE hackathon for providing the platform to initiate this project
-- All the original Team NexHack members for their innovative ideas and hard work
-- Open-source community for continuous support and inspiration
+- **SIT Hack-A-Verse 2025**: The platform where this innovative idea was born.
+- **Team NexHack**: For their creativity, hard work, and commitment to sustainability.
+- Community and open-source contributors for their continuous support and inspiration.
 
 ## 📬 Contact
 
@@ -110,6 +116,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
   
-**Made with 💚 for the planet**
+**Made with 💚 for a cleaner, sustainable future**
 
 </div>
