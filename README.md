@@ -106,12 +106,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Team NexHack**: For their creativity, hard work, and commitment to sustainability.
 - Community and open-source contributors for their continuous support and inspiration.
 
-## 📬 Contact
-
-- **Team Email**: team@ecopulse.org
-- **Twitter**: [@EcoPulseApp](https://twitter.com/EcoPulseApp)
-- **Discord**: [Join our community](https://discord.gg/ecopulse)
-
 ---
 
 <div align="center">
