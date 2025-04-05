@@ -1,4 +1,4 @@
-package com.hackathon.ecopulseapp
+package com.hackathon.ecopulseap
 
 import io.flutter.embedding.android.FlutterActivity
 

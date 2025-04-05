@@ -88,7 +88,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     await actions.textToSpeech(
-                      'welcome to our ECOBOT',
+                      'welcome to our Ecobot',
                     );
                   },
                   child: ClipRRect(

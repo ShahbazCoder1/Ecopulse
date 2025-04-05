@@ -10,8 +10,8 @@ Future initFirebase() async {
             projectId: "robono-95a2d",
             storageBucket: "robono-95a2d.appspot.com",
             messagingSenderId: "26602014755",
-            appId: "1:26602014755:web:17eee6a3574dd8f7d28996",
-            measurementId: "G-PEZDYGSDKP"));
+            appId: "1:26602014755:web:4adb2f232a0deba0d28996",
+            measurementId: "G-CMHZD8ET4V"));
   } else {
     await Firebase.initializeApp();
   }

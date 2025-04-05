@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '/backend/api_requests/api_manager.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -123,16 +125,22 @@ class FFAppState extends ChangeNotifier {
     yExpence.insert(index, value);
   }
 
-  String _pro = '';
-  String get pro => _pro;
-  set pro(String value) {
-    _pro = value;
+  String _token = '';
+  String get token => _token;
+  set token(String value) {
+    _token = value;
   }
 
   String _address = '';
   String get address => _address;
   set address(String value) {
     _address = value;
+  }
+
+  LatLng? _latlng;
+  LatLng? get latlng => _latlng;
+  set latlng(LatLng? value) {
+    _latlng = value;
   }
 }
 

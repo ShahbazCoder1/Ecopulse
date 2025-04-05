@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:26602014755:android:51039ba35a5348d7d28996",
+        "mobilesdk_app_id": "1:26602014755:android:033cbc62bdbbb8afd28996",
         "android_client_info": {
-          "package_name": "com.hackathon.ecopulseapp"
+          "package_name": "com.hackathon.ecopulseap"
         }
       },
       "oauth_client": [

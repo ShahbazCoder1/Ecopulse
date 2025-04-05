@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/supabase/supabase.dart';
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/main.dart';
@@ -121,7 +123,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DetailsWidget.routeName,
           path: DetailsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => DetailsWidget(),
+          builder: (context, params) => DetailsWidget(
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: ReportGarbageWidget.routeName,
